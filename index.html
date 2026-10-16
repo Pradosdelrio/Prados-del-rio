@@ -1,0 +1,577 @@
+<title>Prados del Río</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Prados del Río by Rasi Group: solares y viviendas en Maimón, Puerto Plata, a 5 minutos de Playa Dorada.">
+<link rel="icon" href="img/isotipo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: bandas alternas crema / verde bosque como el brochure; texto a la izquierda, render a la derecha; renders a sangre en amenidades */
+:root {
+  --bg: #F4EFE4;        /* crema del brochure */
+  --paper: #FAF7F0;
+  --ink: #1F2E25;
+  --green: #23402F;     /* verde bosque de marca */
+  --on-green: #F4EFE4;
+  --clay: #B76339;      /* terracota de marca */
+  --river: #1F9A8E;     /* aguamarina del isotipo */
+  --muted: #5F6B61;
+  --line: #DCD4C3;
+  --ph: #9A6A12;
+  --ph-bg: rgba(183,131,47,.12);
+  --f-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --f-body: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141D17; --paper: #1B271F; --ink: #ECE6D8; --green: #0E1611; --on-green: #ECE6D8;
+    --clay: #DA8A5F; --river: #5CC9BC; --muted: #A9B0A4; --line: #2E3B32; --ph: #E0B35E; --ph-bg: rgba(224,179,94,.12);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141D17; --paper: #1B271F; --ink: #ECE6D8; --green: #0E1611; --on-green: #ECE6D8;
+  --clay: #DA8A5F; --river: #5CC9BC; --muted: #A9B0A4; --line: #2E3B32; --ph: #E0B35E; --ph-bg: rgba(224,179,94,.12);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.6; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 600; line-height: 1.1; text-wrap: balance; margin: 0; color: var(--ink); }
+p { margin: 0; }
+a { color: var(--clay); }
+img { display: block; max-width: 100%; height: auto; }
+:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+.wrap {
+  max-width: 1160px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--clay); }
+.ph { color: var(--ph); background: var(--ph-bg); border-bottom: 1px dashed var(--ph); padding: 0 .3em; border-radius: 2px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font: 600 15px var(--f-body); padding: 13px 22px; border-radius: 999px; border: 1px solid var(--clay); background: var(--clay); color: #fff; text-decoration: none; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: currentColor; }
+.btn:hover { filter: brightness(1.07); }
+.cap { position: absolute; left: 12px; bottom: 12px; font-size: 12px; background: var(--paper); color: var(--ink); padding: 4px 10px; border-radius: 999px; }
+
+/* Navegación */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 10px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+.logo img { width: 38px; height: 38px; }
+.logo b { font-family: var(--f-display); font-weight: 400; font-size: 17px; letter-spacing: .12em; display: block; line-height: 1.1; }
+.logo small { display: block; font-size: 9px; font-weight: 600; letter-spacing: .2em; color: var(--clay); }
+.nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; font-size: 15px; }
+.nav ul a { color: var(--muted); text-decoration: none; }
+.nav ul a:hover { color: var(--ink); }
+.nav .btn { padding: 10px 18px; font-size: 14px; }
+@media (max-width: 920px) { .nav ul { display: none; } }
+@media (max-width: 420px) { .nav .btn { display: none; } }
+
+/* Portada */
+.hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding-block: 56px; }
+.hero .copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 { font-size: clamp(56px, 9vw, 112px); line-height: .95; letter-spacing: -.015em; }
+.hero .lead { font-size: clamp(18px, 2vw, 21px); color: var(--muted); max-width: 34ch; }
+.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero figure { margin: 0; min-width: 0; position: relative; }
+.hero figure img { width: 100%; aspect-ratio: 4 / 4.4; object-fit: cover; object-position: 50% 60%; border-radius: 200px 200px 6px 6px; }
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; padding-block: 36px 48px; }
+  .hero figure img { aspect-ratio: 4 / 3.4; border-radius: 120px 120px 6px 6px; }
+}
+
+/* Datos clave */
+.facts { background: var(--green); color: var(--on-green); margin: 0; }
+.facts .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; padding-block: 26px; }
+.fact { display: grid; gap: 2px; min-width: 0; }
+.fact dt { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; opacity: .7; }
+.fact dd { margin: 0; font-family: var(--f-display); font-size: 22px; line-height: 1.25; }
+@media (max-width: 760px) { .facts .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+section { padding-block: 96px; }
+.tight { padding-top: 0; }
+.alt { background: var(--paper); }
+.head { display: grid; gap: 14px; max-width: 62ch; }
+.head h2 { font-size: clamp(34px, 4.6vw, 52px); }
+.head p { color: var(--muted); }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.split > * { min-width: 0; }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; gap: 36px; } section { padding-block: 64px; } }
+
+/* Visión */
+.prose { display: grid; gap: 18px; font-size: 18px; }
+.pillars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 64px; border-top: 1px solid var(--line); }
+.pillars div { padding: 22px 20px 0 0; min-width: 0; }
+.pillars div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+.pillars h3 { font-size: 22px; }
+.pillars p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+.pillars-lead { font-family: var(--f-display); font-size: clamp(22px, 2.6vw, 28px); margin-top: 64px; max-width: 30ch; }
+@media (max-width: 760px) {
+  .pillars { grid-template-columns: 1fr 1fr; }
+  .pillars div, .pillars div + div { padding: 18px 12px 18px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+}
+
+/* Comunidad (banda verde) */
+.band { background: var(--green); color: var(--on-green); }
+.band h2 { color: var(--on-green); font-weight: 400; font-size: clamp(48px, 8vw, 96px); letter-spacing: -.01em; }
+.band .eyebrow { color: var(--on-green); opacity: .85; }
+.band .words { font-family: var(--f-display); font-size: clamp(20px, 2.4vw, 26px); }
+.band .words em { font-style: normal; color: var(--clay); }
+.band .wrap { display: grid; gap: 18px; }
+
+/* Master plan */
+.mp figure { margin: 0; position: relative; }
+.mp figure img { width: 100%; border-radius: 6px; }
+.legend { list-style: none; margin: 28px 0 0; padding: 0; counter-reset: s; display: grid; }
+.legend li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.legend li::before { content: counter(s); font-family: var(--f-display); color: var(--clay); font-size: 20px; }
+.legend b { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.legend span { display: block; color: var(--muted); font-size: 15px; }
+.scale { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.wide { position: relative; margin-top: 56px; }
+.wide img { width: 100%; max-height: 620px; object-fit: cover; border-radius: 6px; }
+
+/* Amenidades */
+.amen { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-top: 40px; }
+.amen article { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.amen img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; border-radius: 6px; }
+.amen .n { font-size: 12px; font-weight: 600; color: var(--clay); letter-spacing: .1em; }
+.amen h3 { font-size: 24px; }
+.amen p { color: var(--muted); font-size: 15px; }
+@media (max-width: 900px) { .amen { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .amen { grid-template-columns: 1fr; } }
+.renders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 56px; }
+.renders figure { margin: 0; position: relative; min-width: 0; }
+.renders img { width: 100%; aspect-ratio: 16 / 10.4; object-fit: cover; border-radius: 6px; }
+.renders .full { grid-column: 1 / -1; }
+.renders .full img { aspect-ratio: 16 / 7; }
+@media (max-width: 640px) { .renders { grid-template-columns: 1fr; } .renders .full img { aspect-ratio: 16 / 10.4; } }
+
+/* Solar + vivienda */
+.flow { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.flow li { display: grid; justify-items: center; gap: 12px; text-align: center; position: relative; }
+.flow li + li::before { content: "→"; position: absolute; left: -14px; top: 22px; color: var(--clay); font-size: 22px; transform: translateX(-50%); }
+.flow .ic { width: 72px; height: 72px; border-radius: 50%; background: color-mix(in srgb, var(--clay) 14%, var(--bg)); display: grid; place-items: center; }
+.flow svg { width: 30px; height: 30px; stroke: var(--ink); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.flow b { font-size: 13px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.house { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; margin-top: 72px; align-items: start; }
+.house > * { min-width: 0; }
+.house .plan { margin: 0; background: #fff; border-radius: 6px; padding: 12px; border: 1px solid var(--line); }
+.house .plan img { width: 100%; }
+.rooms { columns: 2; column-gap: 24px; list-style: none; margin: 20px 0 0; padding: 0; font-size: 15px; }
+.rooms li { padding: 6px 0; border-bottom: 1px solid var(--line); break-inside: avoid; }
+.facades { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+.facades figure { margin: 0; position: relative; }
+.facades img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; }
+.price { margin-top: 28px; padding: 20px 22px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); display: grid; gap: 8px; }
+.price dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; margin: 0; font-size: 15px; }
+.price dt { color: var(--muted); }
+.price dd { margin: 0; }
+.price .big { font-family: var(--f-display); font-size: clamp(36px, 5vw, 48px); line-height: 1.1; color: var(--ink); font-variant-numeric: lining-nums; }
+.price .big small { display: block; font-family: var(--f-body); font-size: 13px; color: var(--muted); }
+.pay { list-style: none; margin: 8px 0 4px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.pay li { display: grid; gap: 4px; align-content: start; padding: 12px 14px; border-radius: 6px; background: color-mix(in srgb, var(--clay) 9%, var(--paper)); min-width: 0; }
+.pay b { font-family: var(--f-display); font-size: 24px; font-weight: 600; color: var(--clay); }
+.pay span { font-size: 14px; line-height: 1.4; }
+.pay small { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.example { font-size: 14px; color: var(--muted); }
+.example b { color: var(--ink); }
+@media (max-width: 520px) { .pay { grid-template-columns: 1fr; } }
+.hero .from { font-size: 15px; color: var(--ink); }
+.hero .from b { font-family: var(--f-display); font-size: 22px; color: var(--clay); }
+@media (max-width: 860px) { .house { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .flow { grid-template-columns: 1fr 1fr; row-gap: 28px; }
+  .flow li + li::before { display: none; }
+  .facades { grid-template-columns: 1fr; }
+}
+
+/* Ubicación */
+.dist { list-style: none; margin: 28px 0 0; padding: 0; display: grid; }
+.dist li { display: grid; grid-template-columns: 136px 1fr; gap: 16px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.dist .t { font-family: var(--f-display); font-size: 30px; color: var(--clay); font-variant-numeric: tabular-nums; }
+.dist small { display: block; color: var(--muted); font-size: 13px; }
+.map { border-radius: 8px; overflow: hidden; border: 1px solid var(--line); }
+.map svg { display: block; width: 100%; height: auto; }
+.map .sea { fill: #BCD3D0; }
+.map .land { fill: #E7DCC3; }
+.map .river { stroke: #8FB7B2; stroke-width: 6; fill: none; stroke-linecap: round; }
+.map .road { stroke: #C9B994; stroke-width: 3; fill: none; }
+.map .link { stroke: #23402F; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+.map .pt { fill: #23402F; }
+.map .home { fill: #B76339; }
+.map .halo { fill: #B76339; opacity: .22; }
+.map text { font-family: var(--f-body); font-size: 13px; fill: #23402F; }
+.map .lbl { font-family: var(--f-display); font-weight: 600; font-size: 15px; }
+.map .km { fill: #B76339; font-size: 11.5px; }
+.map .ocean { font-size: 11px; letter-spacing: .2em; fill: #4E6B66; }
+.loc-text { display: grid; gap: 14px; margin-top: 22px; color: var(--muted); }
+
+/* El lugar */
+.place { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: 200px; gap: 12px; margin-top: 40px; }
+.place figure { margin: 0; position: relative; min-width: 0; }
+.place img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+.place .a { grid-column: span 2; grid-row: span 2; }
+.place .b { grid-column: span 4; }
+.place .c, .place .d { grid-column: span 2; }
+@media (max-width: 760px) {
+  .place { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; }
+  .place .a { grid-column: span 1; grid-row: span 2; }
+  .place .b, .place .c, .place .d { grid-column: span 1; }
+}
+
+/* Cierre */
+.closing { position: relative; padding: 0; background: var(--green); }
+.closing img { width: 100%; height: 520px; object-fit: cover; opacity: .55; }
+.closing .over { position: absolute; inset: 0; display: flex; align-items: flex-end; }
+.closing .over .wrap { width: 100%; padding-block: 48px; display: grid; gap: 12px; }
+.closing .eyebrow { color: #F0C9A4; }
+.closing h2 { color: #fff; font-weight: 400; font-size: clamp(40px, 6vw, 72px); max-width: 14ch; }
+@media (max-width: 640px) { .closing img { height: 380px; } }
+
+/* Contacto */
+.contact { background: var(--green); color: var(--on-green); }
+.contact h2 { color: var(--on-green); }
+.contact .head p { color: color-mix(in srgb, var(--on-green) 75%, transparent); }
+.contact .split { margin-top: 40px; }
+.info { display: grid; gap: 20px; margin: 0; }
+.info dt { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; opacity: .7; }
+.info dd { margin: 4px 0 0; font-size: 17px; }
+.contact .ph { color: var(--on-green); background: rgba(255,255,255,.08); border-bottom-color: currentColor; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+form .full { grid-column: 1 / -1; }
+label { display: grid; gap: 6px; font-size: 14px; font-weight: 500; }
+input, select, textarea { font: 16px var(--f-body); color: var(--ink); background: var(--paper); border: 1px solid transparent; border-radius: 6px; padding: 12px 14px; width: 100%; }
+textarea { min-height: 110px; resize: vertical; }
+.contact .btn { justify-self: start; }
+.status { font-size: 15px; min-height: 1.6em; }
+@media (max-width: 760px) { form { grid-template-columns: 1fr; } }
+
+footer { background: var(--green); color: color-mix(in srgb, var(--on-green) 60%, transparent); font-size: 13px; border-top: 1px solid rgba(255,255,255,.1); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding-block: 24px; }
+footer .name { display: flex; align-items: center; gap: 10px; letter-spacing: .18em; text-transform: uppercase; }
+footer img { width: 28px; height: 28px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero .copy > * { animation: rise .7s ease both; }
+  .hero .copy > *:nth-child(2) { animation-delay: .06s; }
+  .hero .copy > *:nth-child(3) { animation-delay: .12s; }
+  .hero .copy > *:nth-child(4) { animation-delay: .18s; }
+  @keyframes rise { from { transform: translateY(10px); } to { transform: none; } }
+}
+</style>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="logo" href="#inicio">
+      <img src="img/isotipo.png" alt="" width="38" height="38">
+      <span><b>PRADOS DEL RÍO</b><small>BY RASI GROUP</small></span>
+    </a>
+    <ul>
+      <li><a href="#vision">Proyecto</a></li>
+      <li><a href="#plan">Master plan</a></li>
+      <li><a href="#amenidades">Amenidades</a></li>
+      <li><a href="#vivienda">Solar y vivienda</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+    </ul>
+    <a class="btn" href="#contacto">Solicitar información</a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div class="copy">
+      <span class="eyebrow">Puerto Plata · República Dominicana</span>
+      <h1>Prados del Río</h1>
+      <p class="lead">Una comunidad pensada para vivir, crecer y conectar con el entorno.</p>
+      <p class="from">Solar + casa desde <b>US$119,500</b> · Separa con US$1,000</p>
+      <div class="cta">
+        <a class="btn" href="#contacto">Agendar una visita</a>
+        <a class="btn ghost" href="#plan">Ver el master plan</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/acceso-entrada.jpg" alt="Entrada de acceso a Prados del Río con caseta de control, muros de piedra y vegetación tropical" width="1448" height="1086">
+      <figcaption class="cap">Entrada de acceso · render ilustrativo</figcaption>
+    </figure>
+  </div>
+</header>
+
+<dl class="facts" aria-label="Datos clave">
+  <div class="wrap">
+    <div class="fact"><dt>Solar + casa</dt><dd>Desde 150 m² · casa de 87 m²</dd></div>
+    <div class="fact"><dt>Ubicación</dt><dd>Maimón, Puerto Plata</dd></div>
+    <div class="fact"><dt>Playa Dorada</dt><dd>5 min · ≈3 km</dd></div>
+    <div class="fact"><dt>Acceso</dt><dd>Carretera DR-5</dd></div>
+  </div>
+</dl>
+
+<section id="vision">
+  <div class="wrap">
+    <div class="split">
+      <div class="head">
+        <span class="eyebrow">La visión</span>
+        <h2>Una nueva forma de habitar.</h2>
+      </div>
+      <div class="prose">
+        <p><strong>Prados del Río</strong> es un proyecto residencial de solares en Puerto Plata, concebido alrededor de un entorno natural privilegiado y la presencia del río que bordea el desarrollo.</p>
+        <p>Propone una comunidad residencial de escala media, concebida a partir de una relación equilibrada entre vivienda, paisaje y espacios compartidos: un lugar donde la arquitectura individual se integra a una estructura urbana común, con áreas verdes, espacios recreativos y amenidades que favorezcan la convivencia.</p>
+      </div>
+    </div>
+    <p class="pillars-lead">Una buena comunidad empieza mucho antes de construir una casa.</p>
+    <div class="pillars">
+      <div><h3>Planificación</h3><p>Un master plan que ordena circulaciones, parques y solares.</p></div>
+      <div><h3>Espacio público</h3><p>Parque lineal, plazas y áreas para compartir.</p></div>
+      <div><h3>Arquitectura</h3><p>Modelos de vivienda sobrios, con materiales naturales.</p></div>
+      <div><h3>Paisaje</h3><p>El río y la vegetación tropical como protagonistas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-label="Comunidad">
+  <div class="wrap">
+    <span class="eyebrow">Más que una lotificación,</span>
+    <h2>Una comunidad.</h2>
+    <p class="words">Espacios para <em>vivir</em> · <em>compartir</em> · <em>crecer</em></p>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="split mp">
+      <div>
+        <div class="head">
+          <span class="eyebrow">La idea urbana</span>
+          <h2>Una estructura que organiza la comunidad</h2>
+          <p>El master plan se estructura alrededor de un sistema de espacios comunes que organiza las circulaciones, las áreas recreativas y las parcelas residenciales. El río bordea el proyecto y el parque lineal lo acompaña.</p>
+        </div>
+        <ol class="legend" aria-label="Leyenda del master plan">
+          <li><div><b>Ingreso</b><span>Entrada con caseta de control desde la DR-5.</span></div></li>
+          <li><div><b>Vía secundaria</b><span>Calles internas que conectan los solares.</span></div></li>
+          <li><div><b>Solares</b><span>Parcelas residenciales integradas al paisaje.</span></div></li>
+          <li><div><b>Parque lineal</b><span>Sendero peatonal y ciclovía a lo largo del río.</span></div></li>
+          <li><div><b>Área de juegos</b><span>Juegos infantiles y canchas.</span></div></li>
+          <li><div><b>Área de picnic</b><span>Espacio al aire libre con acceso al río.</span></div></li>
+        </ol>
+        <p class="scale">Master plan · escala 1:2000</p>
+      </div>
+      <figure>
+        <img src="img/master-plan.jpg" alt="Master plan de Prados del Río: manzanas de solares rodeadas por el río" width="1800" height="1172" loading="lazy">
+        <figcaption class="cap">Master plan</figcaption>
+      </figure>
+    </div>
+    <figure class="wide" style="margin-inline:0">
+      <img src="img/vista-aerea.jpg" alt="Vista aérea del proyecto con el río y las manzanas de solares" width="1800" height="1164" loading="lazy">
+      <figcaption class="cap">Un entorno donde el paisaje define la experiencia</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="amenidades" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Espacios para vivir en comunidad</span>
+      <h2>Amenidades</h2>
+    </div>
+    <div class="amen">
+      <article><img src="img/acceso-entrada.jpg" alt="Entrada de acceso con caseta de control, muros de piedra y vegetación tropical" loading="lazy"><span class="n">01</span><h3>Acceso</h3><p>Un acceso que establece la identidad del proyecto mediante una arquitectura sobria y materiales naturales.</p></article>
+      <article><img src="img/parque-sendero.jpg" alt="Parque lineal con ciclovía y personas caminando" loading="lazy"><span class="n">02</span><h3>Parque lineal</h3><p>Un recorrido peatonal integrado al paisaje que conecta distintas áreas del proyecto y promueve el disfrute de los espacios al aire libre.</p></article>
+      <article><img src="img/area-juego-canchas.jpg" alt="Área de juegos infantiles junto al río" loading="lazy"><span class="n">03</span><h3>Áreas recreativas</h3><p>Espacios destinados al juego y la actividad física, concebidos para el disfrute de niños y adultos en un entorno abierto y natural.</p></article>
+      <article><img src="img/picnic-rio.jpg" alt="Área de picnic con pérgola y mesas junto al río" loading="lazy"><span class="n">04</span><h3>Áreas sociales</h3><p>Un espacio de encuentro al aire libre, con áreas para compartir, descansar y disfrutar del paisaje y la proximidad al agua.</p></article>
+    </div>
+    <div class="renders">
+      <figure><img src="img/vista-amenidades.jpg" alt="Vista aérea de la zona de amenidades junto al río" loading="lazy"><figcaption class="cap">Vista general de amenidades</figcaption></figure>
+      <figure><img src="img/area-juego-canchas.jpg" alt="Área de juego y canchas" loading="lazy"><figcaption class="cap">Área de juego y canchas</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="vivienda">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Tu solar, tu versión</span>
+      <h2>Solar + Vivienda + Comunidad</h2>
+      <p>El proyecto permite que cada propietario haga suyo el espacio, partiendo de modelos de vivienda diseñados para adaptarse a diferentes necesidades y posibilidades.</p>
+    </div>
+    <ol class="flow" aria-label="Del solar al hogar">
+      <li><span class="ic"><svg viewBox="0 0 32 32"><path d="M4 22l12-6 12 6-12 6z"/><path d="M16 22V5l7 3-7 3"/></svg></span><b>Solar</b></li>
+      <li><span class="ic"><svg viewBox="0 0 32 32"><path d="M8 24l2-6L22 6l4 4L14 22z"/><path d="M19 9l4 4"/></svg></span><b>Diseño</b></li>
+      <li><span class="ic"><svg viewBox="0 0 32 32"><path d="M5 15L16 6l11 9"/><path d="M8 13v13h16V13"/><path d="M14 26v-6h4v6"/></svg></span><b>Vivienda</b></li>
+      <li><span class="ic"><svg viewBox="0 0 32 32"><path d="M5 15L16 6l11 9"/><path d="M8 13v13h16V13"/><path d="M16 23s-4-2.4-4-5a2 2 0 0 1 4-1 2 2 0 0 1 4 1c0 2.6-4 5-4 5z"/></svg></span><b>Hogar</b></li>
+    </ol>
+
+    <div class="house">
+      <figure class="plan">
+        <img src="img/tipologia-planta.jpg" alt="Planta arquitectónica de la tipología de vivienda de 3 habitaciones" width="854" height="1009" loading="lazy">
+      </figure>
+      <div>
+        <span class="eyebrow">Tipología de vivienda</span>
+        <h3 style="font-size:clamp(28px,3.4vw,38px);margin-top:10px">87 m² · 3 habitaciones · 2 baños · marquesina</h3>
+        <ul class="rooms">
+          <li>Ingreso y marquesina</li>
+          <li>Sala</li>
+          <li>Comedor</li>
+          <li>Cocina</li>
+          <li>Área de lavado</li>
+          <li>Blancos</li>
+          <li>Hab. principal con walk-in closet y baño</li>
+          <li>Habitación 2 con clóset</li>
+          <li>Habitación 3 con clóset</li>
+          <li>Baño 2</li>
+        </ul>
+        <div class="facades">
+          <figure><img src="img/tipologia-a.jpg" alt="Fachada de la tipología A" loading="lazy"><figcaption class="cap">Tipología A</figcaption></figure>
+          <figure><img src="img/tipologia-b.jpg" alt="Fachada de la tipología B" loading="lazy"><figcaption class="cap">Tipología B</figcaption></figure>
+        </div>
+        <div class="price" id="precio">
+          <span class="eyebrow">Precio y plan de pago</span>
+          <p class="big"><small>Precio de salida · solar desde 150 m² con casa de 87 m²</small>US$119,500</p>
+          <ol class="pay">
+            <li><b>US$1,000</b><span>Separación</span></li>
+            <li><b>20%</b><span>Inicial, en hasta 12 meses<small>US$23,900</small></span></li>
+            <li><b>80%</b><span>Financiado con la entidad financiera de tu preferencia<small>US$95,600</small></span></li>
+          </ol>
+          <p class="example">Ejemplo sobre el precio de salida: después de la separación, el resto del inicial (US$22,900) en 12 cuotas de unos <b>US$1,908</b> al mes.</p>
+          <dl>
+            <dt>Solares</dt><dd>Desde 150 m²</dd>
+            <dt>Casa</dt><dd>87 m² de construcción</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion" class="alt">
+  <div class="wrap split">
+    <div>
+      <div class="head">
+        <span class="eyebrow">Ubicación</span>
+        <h2>A 5 minutos de Playa Dorada</h2>
+      </div>
+      <ul class="dist">
+        <li><span class="t">3 min</span><span>Punta Bergantín</span></li>
+        <li><span class="t">5 min</span><span>Playa Dorada<small>≈3 km</small></span></li>
+        <li><span class="t">7–9 min</span><span>Supermercados Bravo y Jumbo</span></li>
+        <li><span class="t">8 min</span><span>Puerto Plata</span></li>
+        <li><span class="t">20 min</span><span>Aeropuerto Internacional Gregorio Luperón<small>≈8 km en línea recta</small></span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="map" role="img" aria-label="Mapa esquemático: Prados del Río junto a la DR-5, con Playa Dorada y Punta Bergantín al norte, Puerto Plata al oeste y el aeropuerto al este">
+        <svg viewBox="0 0 600 340">
+          <rect class="land" width="600" height="340"/>
+          <path class="sea" d="M0 0H600V70C520 82 470 60 420 92 380 118 330 120 290 100 240 74 160 60 90 50 50 44 20 40 0 40Z"/>
+          <text class="ocean" x="430" y="38">OCÉANO ATLÁNTICO</text>
+          <path class="road" d="M0 210C120 200 220 190 310 205S480 200 600 186"/>
+          <path class="river" d="M70 340C110 290 160 280 230 268S330 230 380 250 470 300 520 340"/>
+          <path class="link" d="M120 96L268 232"/>
+          <path class="link" d="M300 128L270 232"/>
+          <path class="link" d="M520 178L274 234"/>
+          <circle class="pt" cx="120" cy="96" r="6"/>
+          <text class="lbl" x="132" y="92">Puerto Plata</text>
+          <text class="km" x="132" y="110">8 min</text>
+          <circle class="pt" cx="300" cy="128" r="6"/>
+          <text class="lbl" x="312" y="124">Playa Dorada</text>
+          <text class="km" x="312" y="142">≈3 km · 5 min</text>
+          <path class="link" d="M408 104L272 232"/>
+          <circle class="pt" cx="408" cy="104" r="6"/>
+          <text class="lbl" x="420" y="122">Punta Bergantín</text>
+          <text class="km" x="420" y="139">3 min</text>
+          <circle class="pt" cx="520" cy="178" r="6"/>
+          <text class="lbl" x="400" y="170">Aeropuerto G. Luperón</text>
+          <text class="km" x="452" y="200">≈8 km · 20 min</text>
+          <text x="20" y="200" style="font-size:11px">DR-5</text>
+          <circle class="halo" cx="270" cy="233" r="20"/>
+          <circle class="home" cx="270" cy="233" r="8"/>
+          <text class="lbl" x="294" y="262" style="fill:#B76339">Prados del Río</text>
+        </svg>
+      </div>
+      <div class="loc-text">
+        <p>Ubicado junto a la carretera principal DR-5, Prados del Río cuenta con una conexión directa hacia Punta Bergantín, Playa Dorada, Puerto Plata y el Aeropuerto Gregorio Luperón, con supermercados como Bravo y Jumbo a pocos minutos.</p>
+        <p>Una ubicación estratégica que permite disfrutar de la oferta turística y los servicios de Puerto Plata, manteniendo la comodidad de contar con todo a pocos minutos de distancia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lugar">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">El lugar</span>
+      <h2>Puerto Plata, en la costa norte</h2>
+      <p>Un entorno de expansión residencial rodeado de vegetación tropical, próximo al corredor turístico de Playa Dorada y al paisaje costero y montañoso del Caribe.</p>
+    </div>
+    <div class="place">
+      <figure class="a"><img src="img/puerto-plata-malecon.jpg" alt="Malecón de Puerto Plata con su faro y un crucero en la bahía" loading="lazy"><figcaption class="cap">Malecón de Puerto Plata</figcaption></figure>
+      <figure class="b"><img src="img/costa-norte.jpg" alt="Vista aérea de una playa y bosque en la costa norte" loading="lazy"><figcaption class="cap">Costa norte</figcaption></figure>
+      <figure class="c"><img src="img/playa-dorada.jpg" alt="Playa de arena clara con palmeras" loading="lazy"><figcaption class="cap">Playa Dorada</figcaption></figure>
+      <figure class="d"><img src="img/playa-bote.jpg" alt="Bote en aguas turquesas frente a una playa" loading="lazy"><figcaption class="cap">Playas cercanas</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="closing" aria-label="Cierre">
+  <img src="img/render-sendero.jpg" alt="" loading="lazy">
+  <div class="over">
+    <div class="wrap">
+      <span class="eyebrow">Prados del Río</span>
+      <h2>Un lugar para construir lo que viene.</h2>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Contacto</span>
+      <h2>Agenda una visita a Prados del Río</h2>
+      <p>Déjanos tus datos y un asesor te contactará con la disponibilidad de solares, los modelos de vivienda y los planes de pago.</p>
+    </div>
+    <div class="split">
+      <dl class="info">
+        <div><dt>Teléfono / WhatsApp</dt><dd><span class="ph">+1 (809) 000-0000</span></dd></div>
+        <div><dt>Correo</dt><dd><span class="ph">ventas@…</span></dd></div>
+        <div><dt>Oficina de ventas</dt><dd><span class="ph">Dirección y horario</span></dd></div>
+        <div><dt>Desarrolla</dt><dd>Rasi Group</dd></div>
+        <div><dt>Proyecto</dt><dd>Residencial Los Prados, Maimón, Puerto Plata</dd></div>
+      </dl>
+      <form id="lead-form" novalidate>
+        <label>Nombre<input id="f-name" name="nombre" autocomplete="name" required></label>
+        <label>Teléfono<input id="f-phone" name="telefono" type="tel" autocomplete="tel" required></label>
+        <label class="full">Correo<input id="f-email" name="correo" type="email" autocomplete="email"></label>
+        <label class="full">Me interesa
+          <select id="f-model" name="interes">
+            <option>Solar</option>
+            <option>Solar + vivienda (Tipología A)</option>
+            <option>Solar + vivienda (Tipología B)</option>
+            <option>Información general</option>
+          </select>
+        </label>
+        <label class="full">Mensaje<textarea id="f-msg" name="mensaje" placeholder="¿Qué día te gustaría visitar el proyecto?"></textarea></label>
+        <button class="btn full" type="submit">Enviar solicitud</button>
+        <p class="status full" id="f-status" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="name"><img src="img/isotipo.png" alt="" width="28" height="28">Prados del Río · by Rasi Group</span>
+    <span>Imágenes ilustrativas. Información sujeta a cambios.</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('lead-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var s = document.getElementById('f-status');
+  var name = document.getElementById('f-name').value.trim();
+  var phone = document.getElementById('f-phone').value.trim();
+  if (!name || !phone) { s.textContent = 'Escribe tu nombre y teléfono para continuar.'; return; }
+  s.textContent = 'Formulario de prueba: en esta versión los datos aún no se envían a ningún correo.';
+});
+</script>
